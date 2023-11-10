@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>SUGGARO</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <link rel="icon" type="image/png" href="assets/img/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/apple-icon-180x180.png">
+    <link rel="stylesheet" href="assets/css/style.css?v0.0.6">
+    <link rel="stylesheet" href="assets/css/custom.css?v1.0.6">
+    <link rel="manifest" href="__manifest.json">
+</head>
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader bg-primary scrolled">
+        <div class="left">
+            <a href="#" class="headerButton" data-bs-toggle="offcanvas" data-bs-target="#sidebarPanel">
+                <!-- profile box -->
+				<div class="profileBox pb-buttom">
+					<div class="image-wrapper">
+						<img src="assets/img/logo/suggaro_logo_250px.png" alt="image" id="avatar" class="imaged rounded noborder">
+					</div>
+				   
+				</div>
+				<!-- * profile box -- >
+				<ion-icon name="menu-outline"></ion-icon>-->
+            </a>
+			<a href="#" class="headerButton msg-feauture-icon">
+				<ion-icon name="mail-outline" role="img" class="md hydrated" aria-label="mail outline"></ion-icon>
+				<span class="badge"><ion-icon name="heart"></ion-icon></span>
+			</a>
+			<a href="#" class="headerButton msg-unread-icon active">
+				<ion-icon name="mail-outline" role="img" class="md hydrated" aria-label="mail outline"></ion-icon>
+				<span class="badge badge-success" id="unreaded">0</span>
+			</a>
+        </div>
+        <div class="pageTitle">
+            
+        </div>
+        <div class="right">
+           
+        </div>
+    </div>
+    <!-- * App Header -->
+
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+        <ul class="listview image-listview media mb-2" id="chat_list"></ul>
+	</div>
+    <!-- * App Capsule -->
+
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="index.html" class="item">
+            <div class="col">
+                <ion-icon name="disc-outline"></ion-icon>
+				Nearby
+            </div>
+        </a>
+        <a href="global.html" class="item">
+            <div class="col">
+                <ion-icon name="earth-outline"></ion-icon>
+				Global
+            </div>
+        </a>
+        <a href="nearby.html" class="item">
+            <div class="col">
+                <ion-icon name="heart-outline"></ion-icon>
+				Favorites
+            </div>
+        </a>
+        <a href="visitors.html" class="item">
+            <div class="col">
+				<ion-icon name="eye-outline"></ion-icon>
+				Visitors
+            </div>
+        </a>
+        <a href="" class="item active">
+            <div class="col">
+                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                <span class="badge badge-danger" id="unreaded_footer"></span>
+				Messages
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+
+    <!-- App Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarPanel">
+        <div class="offcanvas-body">
+            <!-- profile box -->
+            <div class="profileBox">
+                <div class="image-wrapper">
+                    <img src="assets/img/Avatar-male.jpg" alt="image" id="avatar_sidebar" class="imaged rounded">
+                </div>
+                <div class="in">
+                    <strong id="username"></strong>
+                    <div class="text-muted">
+                        <ion-icon name="location"></ion-icon>
+                        <span id="location"></span>
+                    </div>
+                </div>
+                <a href="#" class="close-sidebar-button" data-bs-dismiss="offcanvas">
+                    <ion-icon name="close"></ion-icon>
+                </a>
+            </div>
+            <!-- * profile box -->
+
+            <div class="listview-title mt-2 mb-1">
+                <span>ACCOUNT OVERVIEW</span>
+            </div>
+            <ul class="listview flush transparent no-line image-listview mt-2">
+                <li>
+                    <a href="profile.html" class="item">
+                        <div class="icon-box bg-primary">
+                           <ion-icon name="create-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            My Profile
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="images-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Photo Gallery
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            <div>Delete my Profile</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./logout.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            <div>Logout</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+			<div class="listview-title mt-2 mb-1">
+                <span>LEGAL INFORMATIONS</span>
+            </div>
+            <ul class="listview flush transparent no-line image-listview mt-2">
+                <li>
+                    <a href="page.html?article=about-suggaro" class="item">
+                        <div class="in">
+                            About SUGGARO
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page.html?article=term-of-use" class="item">
+                        <div class="in">
+                            Terms of Service
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page.html?article=privacy-policy" class="item">
+                        <div class="in">
+                            <div>Privacy Policy</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item">
+                        <div class="in">
+                            <div>Cookies Settings</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item">
+                        <div class="in">
+                            <div>Download my data</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page.html?article=advertise-on-suggaro" class="item">
+                        <div class="in">
+                            <div>Advertise on SUGGARO</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+			<div class="listview-title mt-2 mb-1">
+                <span>HELP CENTER</span>
+            </div>
+            <ul class="listview flush transparent no-line image-listview mt-2">
+                <li>
+                    <a href="faq.html" class="item">
+                        <div class="in">
+                            FAQ's
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="item">
+                        <div class="in">
+                            Contact us
+                        </div>
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="listview-title mt-2 mb-1">
+                <span>Friends</span>
+            </div>
+            <ul class="listview image-listview flush transparent no-line">
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar7.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Sophie Asveld</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar3.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Sebastian Bennett</div>
+                            <span class="badge badge-danger">6</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar10.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Beth Murphy</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar2.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Amelia Cabal</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar5.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Henry Doe</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- sidebar buttons -->
+        <div class="sidebar-buttons">
+            <a href="./profile.html" class="button">
+                <ion-icon name="person-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="archive-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="settings-outline"></ion-icon>
+            </a>
+            <a href="./logout.html" class="button">
+                <ion-icon name="log-out-outline"></ion-icon>
+            </a>
+        </div>
+        <!-- * sidebar buttons -->
+    </div>
+    <!-- * App Sidebar -->
+
+    <!-- ============== Js Files ==============  -->
+    <!-- Bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- ProgressBar js -->
+    <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.1.1.js"></script>
+    <script src="assets/js/app.js?v0.0.1"></script>
+	<script>
+		var loader = document.getElementById('loader');
+		localStorage.removeItem("active_channel");
+		localStorage.removeItem("active_channel_id");
+		localStorage.removeItem("active_chat_userid");
+		localStorage.removeItem("active_chat_username");
+		localStorage.removeItem("profileExists");
+		localStorage.removeItem("demouuid");
+		var pubkey = "pub-c-2c0ea513-d356-4b8c-b10b-884046854f75"; // use your own pub-key
+        var subkey = "sub-c-a9e942de-be54-4067-ae49-d0525a9ecef7"; // use your own sub-key
+
+		var username = localStorage.getItem("username");
+		var city = "Paphos";
+		var country = "CY";
+
+		var myState = {
+			'username': username,
+			'location': 'Paphos, Cyprus'
+		};
+
+		if (localStorage.getItem('profileExists')) {
+			//initalize the userState from localstorage..
+			//you could also retrieve a user profile from your backend systems
+			myState.username = localStorage.getItem("username");
+			myState.location = localStorage.profileLocation;
+		}
+
+		var myUUID = localStorage.getItem(subkey + "uuid");
+		var lastTimeToken = localStorage.getItem(subkey);
+
+		console.log('local storage had: ' + myUUID + ' for uuid and ' + ' ' + lastTimeToken);
+
+		if (lastTimeToken === null) {
+			console.log('not using last token');
+			lastTimeToken = 0; //make it zero
+		}
+
+		if (myUUID === null) {
+			myUUID = PubNub.generateUUID();
+		}
+
+		var pubnub = new PubNub({
+			publishKey:        pubkey,
+			subscribeKey:      subkey,
+			logVerbosity:      false,
+			uuid:              myUUID,
+			ssl:               true,
+			heartbeatInterval: 60
+		});
+		var surl="https://suggaro.eadcloud.eu/API/";
+		var chat_channels;
+		
+		$(document).ready(function() {	
+			if ((localStorage.getItem('contact_id') === null) || (localStorage.getItem('contact_id') === "undefined") || localStorage.getItem('contact_id') === " ") {
+				window.location = "./login.html";
+			}
+			$('#username').text(localStorage.getItem('username'));
+			$('#location').text(localStorage.getItem('location'));
+			$("#avatar_sidebar").attr("src","https://suggaro.eadcrm.eu/uploads/client_profile_images/"+localStorage.getItem('contact_id')+"/"+localStorage.getItem("profilepic"));
+			
+			getChannels();
+			//-----------------------------------------------------------------------
+			// Page Loader
+			//----------------------------------------------------------------------
+			setTimeout(() => {
+				loader.setAttribute("style", "pointer-events: none; opacity: 0; transition: 0.2s ease-in-out;");
+				setTimeout(() => {
+					loader.setAttribute("style", "display: none;")
+				}, 1000);
+			}, 450);
+			//-----------------------------------------------------------------------
+						
+		});
+			
+		function getChannels(){
+			data = new Object();
+			data['user'] = localStorage.getItem('contact_id');
+			var channels_list = "";
+			var count_channels = 0;
+			var chat_item = "";
+			$.ajax({      					
+				type: "POST",
+				url: surl + "CHAT/getChannels.php",             
+				data: data,
+				dataType: "json",
+				encode: true,                  
+				success: function(channels){			
+					$.each(channels, function(key, channel){
+						if(count_channels > 0){
+							channels_list += ",";
+						}
+						channels_list += 'SUGGARO_APP_'+channel;
+						count_channels++;	
+						//joinChatRoom('SUGGARO_APP_'+channel);
+						printChannel(channel);
+					});
+					localStorage.setItem("channels", channels_list);				
+				}								
+			});
+			
+		} 
+		function printChannel(channel){
+			data = new Object();
+			data['id'] = channel;
+			var channel_id = channel;
+			var channels_list = "";
+			var count_channels = 0;
+			var chat_item = "";
+			var profile_pic = "";
+			var partner_username = "";
+			var partner_country = "";
+			var partner_location = "";
+			var partner_gender = "";
+			var partner_age = "";
+			var partner_last_message = "";
+			var favorite_partner = "";
+			var partner_id = 0;
+			$.ajax({      					
+				type: "POST",
+				url: surl + "CHAT/getChannelDetails.php",             
+				data: data,
+				dataType: "json",
+				encode: true,                  
+				success: function(channel_data){	
+					$.each(channel_data, function(key, channel){
+						if(channel.user1==localStorage.getItem('contact_id')){
+							partner_id = channel.user2;
+						}
+						else if(channel.user2==localStorage.getItem('contact_id')){
+							partner_id = channel.user1;
+						}
+						var postdata = {
+							id: partner_id
+						};
+						$.ajax({    
+							type: "POST",
+							url: "https://suggaro.eadcloud.eu/API/serch_contact.php",             
+							data: postdata,
+							dataType: "json",
+							encode: true,                  
+							success: function(partner){
+								if(partner['profile_image']!=null){
+									profile_pic = "https://suggaro.eadcrm.eu/uploads/client_profile_images/"+partner_id+"/thumb_"+partner['profile_image'];
+								}
+								else{
+									profile_pic = "assets/img/users/samples/2.jpg";
+								}
+								arr = partner['customfields']; 
+								$.each(arr, function(key, customefield){
+									if(customefield.label === "Username"){
+										partner_username = customefield.value;									
+									}
+									if(customefield.label === "Country"){
+										partner_country = customefield.value;
+										
+									}
+									if(customefield.label === "Location"){
+										partner_location = customefield.value;
+										
+									}
+									if(customefield.label === "Gender"){
+										partner_gender = customefield.value;
+										partner_gender = partner_gender.replace(/[0-9`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi,'');
+									}
+									if(customefield.label === "Birthday"){
+										var newDate = customefield.value;
+										newDate = getFormattedDate(newDate);
+										partner_age = getAge(newDate);
+									}
+									
+								});								
+								var postdata2 = {
+									channel: channel_id
+								};
+								var unread = "";
+								var count_unread = 0;
+								$.ajax({   
+									type: "POST",
+									url: "https://suggaro.eadcloud.eu/API/CHAT/getLastMsg.php",             
+									data: postdata2,
+									dataType: "json",
+									encode: true,                  
+									success: function(last_msg){
+										$.each(last_msg, function(key, msg){
+											var unread = "";
+											var d = new Date($.now());
+											var now = getFullDate(d);
+											var minutes = datediff(msg.created, now, 'minutes');
+											partner_last_message = "Unset";
+											if(ConvertMinutes(minutes) != "Now"){timediff = ConvertMinutes(minutes) + " Ago";}
+											else{timediff = ConvertMinutes(minutes);}
+											if((msg.status==1) && (msg.to==localStorage.getItem('contact_id'))){
+												count_unread++;
+												unread = '<span class="chat_status">UNREAD</span>';
+											}
+											
+											if(favoriteUser(partner_id) == 1){
+												favorite_partner = '<span class="chat_star"><ion-icon name="heart"></ion-icon></span>';
+											}
+											else{
+												favorite_partner = '';
+											}
+											
+											if(msg.msg){
+												partner_last_message = msg.msg;
+												chat_item = '<li>'
+																+'<a href="chat.html?user='+partner['userid']+'&contact='+partner_id+'" class="item">'
+																	+'<div class="imageWrapper">'
+																		+'<img src="'+profile_pic+'" alt="image" class="imaged w64">'
+																		+'<div class="chat_picons">'
+																			+'<img src="assets/img/flags/1x1/cu.svg" alt="country">'
+																		+'</div>'
+																	+'</div>'
+																	+'<div class="in">'
+																		+'<div>'
+																			+ partner_username + '(' + partner_age + ')'
+																			+ favorite_partner
+																			+'<div class="text-muted">' + timediff + '</div>'
+																			+'<div class="text-msg">' + partner_last_message.substr(0,50) +'...</div>'
+																		+'</div>'
+																		+ unread
+																	+'</div>'
+																+'</a>'
+															+'</li>';
+												$("#chat_list").append(chat_item);
+											}
+										});
+										$("#unreaded").html(count_unread);
+									}
+								});
+								
+							}
+						});
+					});	
+				}				
+			});
+			
+		} 
+		pubnub.addListener({
+			message: function(event) {
+				lastTimeToken = event.timetoken;
+				var formattedTime = UI.formatTimeToken(lastTimeToken);
+				var text = event.message.text;
+				var fromUser = event.message.from;
+				console.log("UI.addChatMessage(text, formattedTime, fromUser)");
+					
+			},
+			presence: function(event) {
+				var action = event.action;
+				var channel = event.channel;
+				var uuid = event.uuid;
+				var data = event.state;
+				var occupancy = event.occupancy;
+				var from_user;
+				
+				console.log("");
+				console.log("*** presence event ***");
+				console.log("action:    " + action);
+				console.log("channel:   " + channel);
+				console.log("uuid:      " + uuid);
+				console.log("occupancy: " + occupancy);
+				console.log("data:      " + JSON.stringify(data));
+				console.log("*** presence event ***");
+				console.log("");
+			},
+			status: function(event) {
+				if (event.category === "PNConnectedCategory") {
+					pubnub.hereNow(
+						{
+							channels: [localStorage.getItem("channels")],
+							includeUUIDs: true,
+							includeState: true
+						}, 
+						function (status, response) {
+							sendStateUpdate();
+							console.log("Status Response");
+							console.log(response);
+						}
+					);
+				}
+			},
+		});
+		function joinChatRoom(chat_channel) {
+			pubnub.subscribe({
+				channels: [chat_channel],
+				withPresence: true // also subscribe to presence instances.
+			});
+		}
+		function leaveChatRoom() {
+			pubnub.unsubscribe({
+				channels: [localStorage.getItem("channels")]
+			});
+
+			UI.clearBuddyList();
+			document.querySelector("#send-button").disabled = true;
+			document.querySelector("#console-message-input").disabled = true;
+		}
+		function sendStateUpdate() {
+			localStorage.setItem('profileExists', true);
+			pubnub.setState(
+				{
+					channels: [localStorage.getItem("channels")],
+					uuid: myUUID,
+					state: myState
+				},
+				function(response) {
+					console.log("setState on sendStateUpdate: " + JSON.stringify(response));
+				}
+			);
+		}
+		function getFormattedDate(datestring) {
+			const date = new Date(datestring);
+			let year = date.getFullYear();
+			let month = (1 + date.getMonth()).toString().padStart(2, '0');
+			let day = date.getDate().toString().padStart(2, '0');
+		  
+			return day + '/' + month + '/' + year;
+		}
+		function getFullDate(datestring) {
+			const date = new Date(datestring);
+			let year = date.getFullYear();
+			let month = (1 + date.getMonth()).toString().padStart(2, '0');
+			let day = date.getDate().toString().padStart(2, '0');
+			let H = date.getHours();
+			let M = date.getMinutes();
+			let S = date.getSeconds();
+		  
+			return year + '-' + month + '-' + day + ' ' + H + ':' + M + ':' + S;
+		}
+		function getAge(dateString) {
+		  var now = new Date();
+		 
+		  var yearNow = now.getFullYear();
+		  var monthNow = now.getMonth();
+		  var dateNow = now.getDate();
+		 //date must be mm/dd/yyyy		  
+		  var dob = new Date(dateString.substring(6,10),
+							 dateString.substring(0,2)-1,                   
+							 dateString.substring(3,5)                  
+							 );
+		 
+		  var yearDob = dob.getFullYear();
+		  var monthDob = dob.getMonth();
+		  var dateDob = dob.getDate();
+		  var age = {};
+		  var ageString = "";
+		  var yearString = "";
+		  var monthString = "";
+		  var dayString = "";
+		 
+		 
+		  yearAge = yearNow - yearDob;
+		 
+		  if (monthNow >= monthDob)
+			var monthAge = monthNow - monthDob;
+		  else {
+			yearAge--;
+			var monthAge = 12 + monthNow -monthDob;
+		  }
+		 
+		  if (dateNow >= dateDob)
+			var dateAge = dateNow - dateDob;
+			else {
+				monthAge--;
+				var dateAge = 31 + dateNow - dateDob;
+		 
+				if (monthAge < 0) {
+					monthAge = 11;
+					yearAge--;
+				}
+			}
+		 
+			age = {
+				years: yearAge,
+			};
+			ageString = age.years;
+			return ageString;
+		}
+		function datediff(fromDate,toDate,interval) { 
+			/*
+			* DateFormat month/day/year hh:mm:ss
+			* ex.
+			* datediff('01/01/2011 12:00:00','01/01/2011 13:30:00','seconds');
+			*/
+			  
+			var second=1000, minute=second*60, hour=minute*60, day=hour*24, week=day*7; 
+			fromDate = new Date(fromDate); 
+			toDate = new Date(toDate); 
+			var timediff = toDate - fromDate; 
+
+			if (isNaN(timediff)) return NaN; 
+			switch (interval) { 
+				case "years": return toDate.getFullYear() - fromDate.getFullYear(); 
+				case "months": return ( 
+				  ( toDate.getFullYear() * 12 + toDate.getMonth() ) 
+				  - 
+				  ( fromDate.getFullYear() * 12 + fromDate.getMonth() ) 
+				); 
+				case "weeks"  : return Math.floor(timediff / week); 
+				case "days"   : return Math.floor(timediff / day);  
+				case "hours"  : return Math.floor(timediff / hour);  
+				case "minutes": return Math.floor(timediff / minute); 
+				case "seconds": return Math.floor(timediff / second); 
+				default: return undefined; 
+			} 
+		}
+		function ConvertMinutes(num){
+			h = Math.floor(num/60);
+			d = Math.floor(h/24);
+			h = h - d * 24
+			m = Math.floor(num%60)
+			s = ((num - d*24*60 - h*60 -m)*60).toFixed(2)
+			return_val = "";
+			if(d > 0){return_val += d +" Days";}
+			if(h > 0){return_val += " " + h +" Hours";}
+			if(m > 0){return_val += " " + m +" Min";}
+			if(s > 0){return_val += " " + s +"Sec";}
+			if(d==0 && h == 0 && m == 0 & s == 0 ){return_val += "Now";}
+			
+			
+		  return(return_val);
+		}
+		function favoriteUser(user) {
+			var fav;
+			url = "https://suggaro.eadcloud.eu/API/checkFavorite.php";
+			data = new Object();
+			data['user_id'] = localStorage.getItem("contact_id");
+			data['favorite_id'] = user;
+			$.ajax({    
+				type: "POST",
+				url: url,             
+				data: data,
+				dataType: "json",
+				encode: true,                  
+				success: function(rfavorite){
+					fav = rfavorite;
+				},
+				async: false								
+			});
+			return fav;
+		}
+ </script>
+</body>
+
+</html>

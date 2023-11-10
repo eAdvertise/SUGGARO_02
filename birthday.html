@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>SUGGARO</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <link rel="icon" type="image/png" href="assets/img/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/apple-icon-180x180.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="manifest" href="assets/img/icons/manifest.json">
+</head>
+
+<body class="bg-white">
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader no-border transparent position-absolute">
+        <div class="left">
+            <a href="#" class="headerButton goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle"></div>
+        <div class="right">
+            <a href="login.html" class="headerButton">
+                Login
+            </a>
+        </div>
+    </div>
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="login-form" >
+            <div class="section">
+                <img src="assets/img/sample/photo/vector4.png" alt="image" class="form-image">
+            </div>
+            <div class="section">
+                <h2 class="text-center mt-2">YOUR BIRTHDAY</h2>
+                <p class="text-center mt-1">Click on the calendar to select your birthdate</p>
+            </div>
+			<form id="birthday"  method="get" action="register.html">
+				<div class="container mt-5">
+					<div class="form-group">
+					  <label for="dateInput"></label>
+					  <div class="input-group">
+						
+						<div class="input-group-append">
+						  <img src="assets/img/calendar.svg" alt="Calendar" id="calendar-svg" class="img-fluid" />
+
+						  <input type="date" name="birthday" class="form-control mt-2" id="dateInput" placeholder="YYYY-MM-DD" />
+						</div>
+					  </div>
+					</div>
+				</div>
+
+				<div class="section">
+					<p class="mt-1" id="calendar-18">(You have to be at least 18 years to be able to use Suggaro)</p>
+				</div>
+			
+				<div class="form-group-boxed mt-2">
+					<button type="submit" class="btn btn-primary btn-block btn-lg login-phase-btn">Save your birthdate</button>
+				</div>
+			</form>
+		</div>
+        <div class="section">
+            <a href="birthday-younger.html" class="mt-1" id="younger-18">I'm younger than 18 years</a>
+        </div>
+
+    </div>
+    <!-- * App Capsule -->
+    <!-- ============== Js Files ==============  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- ProgressBar js -->
+    <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+	<script>
+		var loader = document.getElementById('loader');
+		$(document).ready(function() {	
+			
+			$('.confirm-message').removeClass('success-message').removeClass('error-message');
+			//-----------------------------------------------------------------------
+			// Page Loader
+			//----------------------------------------------------------------------
+			setTimeout(() => {
+				loader.setAttribute("style", "pointer-events: none; opacity: 0; transition: 0.2s ease-in-out;");
+				setTimeout(() => {
+					loader.setAttribute("style", "display: none;")
+				}, 1000);
+			}, 450);
+			//-----------------------------------------------------------------------
+			
+		});
+		
+
+	</script>
+</body>
+
+</html>

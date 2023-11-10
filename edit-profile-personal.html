@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>SUGGARO</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <link rel="icon" type="image/png" href="assets/img/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/apple-icon-180x180.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="assets/img/icons/manifest.json">
+    <link rel="stylesheet" href="assets/js/plugins/intl-tel-input-master/build/css/intlTelInput.css" />
+    <!-- select2 -->
+    <link href="assets/js/plugins/multiselect/css/select2.min.css" rel="stylesheet" />
+	<!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css?v1.3">
+
+    
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader bg-primary text-light">
+        <div class="left">
+            <a href="javascript:;" class="headerButton goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">Personal Informations</div>
+        <div class="right">
+        </div>
+    </div>
+    <!-- * App Header -->
+
+	
+	<!-- App Content -->
+		<!-- App Capsule -->
+		<div id="appCapsule">
+			<form id="personal_details_form">
+				<div class="section full mt-2 mb-2">
+					<div class="section-title"></div>
+					<div class="wide-block pb-1 pt-1">
+						<ul class="listview image-listview no-line no-space flush">
+							
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="at-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="username">Username</label>
+												<input type="input"  name="username" class="form-control" id="username" data-fieldid="" placeholder="Enter your Username">
+												<i class="clear-input">
+													<ion-icon name="close-circle"></ion-icon>
+												</i>
+											</div>
+											<div class="input-info">Enter your Username</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="mail-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="email">Email</label>
+												<input type="email" name="email" class="form-control" id="email" placeholder="Enter your Email">
+												<i class="clear-input">
+													<ion-icon name="close-circle"></ion-icon>
+												</i>
+											</div>
+											<div class="input-info">Enter your Email</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="call-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<label class="form-label" for="phone">Phone Number</label>
+											<div class="input-wrapper">
+												<input type="tel" name="phone" class="form-control" id="phone" placeholder="Phone" value="">
+												<i class="clear-input">
+													<ion-icon name="close-circle"></ion-icon>
+												</i>
+											</div>
+											<div class="form-text confirm-message"></div>
+											
+											<div class="input-info">Please enter your Mobile Phone Number without 0 number on the beginning </div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="person-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="firstname">First Name</label>
+												<input type="input" class="form-control" id="firstname"
+													placeholder="Enter your First Name">
+												<i class="clear-input">
+													<ion-icon name="close-circle"></ion-icon>
+												</i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="person-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="lastname">Last Name</label>
+												<input type="input" class="form-control" id="lastname"
+													placeholder="Enter your Last Name">
+												<i class="clear-input">
+													<ion-icon name="close-circle"></ion-icon>
+												</i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="navigate-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="area">Location</label>
+												<input type="input" name="area" class="form-control" id="area" data-fieldid="" placeholder="Enter your Area">
+												<i class="clear-input">
+													<ion-icon name="close-circle"></ion-icon>
+												</i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="calendar-clear-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="dateInput">Birthday</label>
+												<div class="input-group">											
+													<div class="input-group-append">
+														<input type="date" name="birthday" class="form-control mt-2" id="dateInput" placeholder="YYYY-MM-DD" data-fieldid=""  />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="diamond-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="needs">Needs</label>
+												<input type="input" name="needs" class="form-control" id="needs" data-fieldid="" placeholder="Enter your Needs">
+												<i class="clear-input">
+													<ion-icon name="close-circle"></ion-icon>
+												</i>
+											</div>
+											<div class="input-info">What is your Needs. (Like 1M or 100k etc)</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="pulse-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="bio">Bio</label>
+												<textarea id="bio" rows="5" class="form-control" data-fieldid=""></textarea>
+												<i class="clear-input">
+													<ion-icon name="close-circle"></ion-icon>
+												</i>
+											</div>
+											<div class="input-info">Some words about your self.</div>
+											
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="people-circle-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="needs">Offer</label>
+												<input  class="offer" type="text" id="offer" data-fieldid="" placeholder="What are you Offer...">
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="people-circle-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="expect">Expect</label>
+												 <input  class="expect" type="text" id="expect" data-fieldid="" placeholder="Whhat are you Expect...">
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="form-group-boxed mt-2">
+						<button type="submit" class="btn btn-primary btn-block btn-lg login-phase-btn">Update</button>
+                    </div>
+				</div>
+				
+			</form>
+			
+		</div>
+		</div>
+		<!-- * App Capsule -->
+	
+	<!-- *App Conten -->
+
+	 	
+	
+    <!-- ============== Js Files ==============  -->
+    <!-- Bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- ProgressBar js -->
+    <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
+    <!-- Base Js File -->
+    
+    <script src="assets/js/plugins/intl-tel-input-master/build/js/intlTelInput-jquery.min.js"></script>
+    <script src="assets/js/base.js"></script>
+    <script src="assets/js/plugins/multiselect/js/handlebars.js"></script>
+	<script src="assets/js/plugins/multiselect/js/select2.min.js"></script>
+    
+	<script>
+		var loader = document.getElementById('loader');
+		$("#phone").intlTelInput({
+			utilsScript: "assets/js/plugins/intl-tel-input-master/build/js/utils.js"
+		});
+		$(document).ready(function() {
+			const offer_content = [];	
+			const expect_content = [];		
+			var activevalue = false;
+			var formData = {
+				id: localStorage.getItem("client_id"),
+				contactid: localStorage.getItem("contact_id")
+			};
+			$.ajax({    
+				type: "POST",
+				url: "https://suggaro.eadcloud.eu/API/get_contact.php",             
+				data: formData,
+				dataType: "json",
+				encode: true,                  
+				success: function(data){ 
+					$("#email").val(data['email']); 
+					$("#firstname").val(data['firstname']); 
+					$("#lastname").val(data['lastname']); 
+					$("#phone").intlTelInput("setNumber", data['phonenumber']);
+					
+				}				
+			});
+			
+			$.ajax({    
+				type: "POST",
+				url: "https://suggaro.eadcloud.eu/API/get_user_custom_fields.php",             
+				data: formData,
+				dataType: "json",
+				encode: true,                  
+				success: function(data2){ 
+					$.each(data2, function(key, customefield){
+						if(customefield.label === "Username"){
+							$("#username").val(customefield.value); 
+							$("#username").attr('data-fieldid', customefield.custom_field_id);
+						}
+						if(customefield.label === "Birthday"){
+							$("#dateInput").val(customefield.value);
+							$("#dateInput").attr('data-fieldid', customefield.custom_field_id); 
+						}
+						if(customefield.label === "Location"){
+							$("#area").val(customefield.value); 
+							$("#area").attr('data-fieldid', customefield.custom_field_id);
+						}
+						if(customefield.label === "Needs"){
+							$("#needs").val(customefield.value); 
+							$("#needs").attr('data-fieldid', customefield.custom_field_id);
+						}
+						if(customefield.label === "Bio"){
+							$("#bio").val(customefield.value); 
+							$("#bio").attr('data-fieldid', customefield.custom_field_id);
+						}
+						if(customefield.label === "Offer"){
+							$("#offer").attr('data-fieldid', customefield.custom_field_id);
+							$.each(JSON.parse(customefield.options), function( i, option ){								
+								$.each(JSON.parse(customefield.value), function( i, value ){
+									
+									if($.trim(option) === $.trim(value)){
+										activevalue = true;
+										return false;
+									}
+								});
+								if(activevalue===true){
+									offer_content.push({id: option, text: option, value: option, selected: true});
+									activevalue = false;
+								}
+								else{
+									offer_content.push({id: option, text: option, value: option, selected: false});
+								}
+							});							
+							$(".offer").select2({
+								 data:offer_content,
+								 // minimumInputLength: 2,
+								 width: '100%',
+								 multiple:true,
+								 placeholder:"Select What are you Offer",
+
+							 });
+						}
+						if(customefield.label === "Expect"){
+							$("#expect").attr('data-fieldid', customefield.custom_field_id);
+							$.each(JSON.parse(customefield.options), function( i, option2 ){								
+								$.each(JSON.parse(customefield.value), function( i, value2 ){									
+									if($.trim(option2) === $.trim(value2)){
+										activevalue = true;
+										return false;
+									}
+								});
+								if(activevalue===true){
+									expect_content.push({id: option2, text: option2, value: option2, selected: true});
+									activevalue = false;
+								}
+								else{
+									expect_content.push({id: option2, text: option2, value: option2, selected: false});
+								}
+								
+							});							
+							$(".expect").select2({
+								data:expect_content,
+								// minimumInputLength: 2,
+								width: '100%',
+								multiple:true,
+								placeholder:"Select What are you Offer",
+
+							});
+						}
+					});
+					//-----------------------------------------------------------------------
+					// Page Loader
+					//----------------------------------------------------------------------
+					setTimeout(() => {
+						loader.setAttribute("style", "pointer-events: none; opacity: 0; transition: 0.2s ease-in-out;");
+						setTimeout(() => {
+							loader.setAttribute("style", "display: none;")
+						}, 1000);
+					}, 450);
+					//-----------------------------------------------------------------------			
+				}				
+			});
+		});
+		$("#personal_details_form").submit(function (event) {
+			var offervalues = $('#offer').select2('data');
+			var offerval = [];
+			//value:"[\"Share WhatsApp\",\" Able to travel together\",\" Dinner together\",\" Video Chat\"]"
+		
+			for(let offervalue of offervalues){
+				offerval.push(offervalue.value);
+			}
+			var expectvalues = $('#expect').select2('data');
+			var expectval = [];
+			for(let expectvalue of expectvalues){
+				expectval.push(expectvalue.value);
+			}
+			var formData = {
+				userid: localStorage.getItem("contact_id"),
+				email: $("#email").val(),
+				phonenumber: $("#phone").intlTelInput("getNumber"),
+				firstname: $("#firstname").val(),
+				lastname: $("#lastname").val(),
+				profile: "personal",
+				username_val: $("#username").val(),
+				username_fieldid: $("#username").attr("data-fieldid"),
+				bday_val: $("#dateInput").val(),
+				bday_fieldid: $("#dateInput").attr("data-fieldid"),
+				area_val: $("#area").val(),
+				area_fieldid: $("#area").attr("data-fieldid"),
+				needs_val: $("#needs").val(),
+				needs_fieldid: $("#needs").attr("data-fieldid"),
+				offer_val: offerval,
+				offer_fieldid: $("#offer").attr("data-fieldid"),
+				expect_val: expectval,
+				expect_fieldid: $("#expect").attr("data-fieldid"),
+				bio_val: $("#bio").val(),
+				bio_fieldid: $("#bio").attr("data-fieldid")
+			};	
+			$.ajax({
+				type: "POST",
+				url: "https://suggaro.eadcloud.eu/API/update_user_custom_fields.php",
+				data: formData,
+				dataType: "json",
+				encode: true,
+				success: function(data){ 
+					console.log(data);	
+					window.location = "./profile.html";	
+				}
+			});
+			event.preventDefault();
+		});
+		
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>SUGGARO APP</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="__manifest.json">
+</head>
+
+<body class="bg-white">
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="login-form" >
+            <div class="section">
+                <img src="assets/img/sample/photo/vector4.png" alt="image" class="form-image">
+            </div>
+            <div class="section">
+                <h2 class="text-center mt-2">YOUR PROFILE</h2>
+            </div>
+
+            <div class="section">
+                <p class="mt-2 ">You will also be able to login with your Username and Password.
+                 </p>
+            </div>
+            <div class="section">
+                <p class="mt-2" style="color: #ffc070;">(YOU WILL BE ABLE TO CHANGE YOUR SUGARNAME LATER)
+                 </p>
+            </div>
+        </div>
+
+        <div class="section full mb-2">
+            <div class="section-title"></div>
+			<form id="nearby">
+				<div class="wide-block p-0">
+
+					<div class="input-list">
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="radioList" id="radioList1">
+							<label class="form-check-label" for="radioList1">Keep "NEARBY"</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="radioList" id="radioList2">
+							<label class="form-check-label" for="radioList2">Turn off "NEARBY"</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group boxed mt-5">
+					<button type="submit" class="btn btn-primary btn-block btn-lg login-phase-btn">Save changes</button>
+				</div>
+			</form>
+		</div>
+	</div>
+    <!-- * App Capsule -->
+
+
+
+    <!-- ============== Js Files ==============  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- ProgressBar js -->
+    <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+	<script>
+		$(document).ready(function() {	
+			$("#nearby").submit(function (event) {
+				var username = $("#username").val();
+				var formData = {
+					userid: localStorage.getItem("userid"),
+					email: localStorage.getItem("email"),
+					nearby_val: $("#orientation").val(),
+					nearby_fieldid: $("#orientation").attr("data-fieldid")
+				};	
+				
+				$.ajax({    
+					type: "POST",
+					url: "https://suggaro.eadcloud.eu/API/update_user.php",
+					data: formData,
+					dataType: "json",
+					encode: true,          
+					success: function(data){  
+						console.log(data);
+																	
+					}
+									
+				});
+				localStorage.setItem("username", username);
+				window.location = "./choose-nearby-search.html";
+				event.preventDefault();
+			});
+		});
+		
+			
+
+		
+
+	</script>
+</body>
+
+</html>

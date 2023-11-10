@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>SUGGARO APP</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="manifest" href="__manifest.json">
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader bg-primary text-light">
+        <div class="left">
+            <a onclick="history.go(1)" class="headerButton goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">FAQ</div>
+        <div class="right"></div>
+    </div>
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+		<div id="accordion_faq">
+		</div>
+	</div>
+    <!-- * App Capsule -->
+	<!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="" class="item active">
+            <div class="col">
+                <ion-icon name="disc-outline"></ion-icon>
+				Nearby
+            </div>
+        </a>
+        <a href="global.html" class="item">
+            <div class="col">
+                <ion-icon name="earth-outline"></ion-icon>
+				Global
+            </div>
+        </a>
+        <a href="nearby.html" class="item">
+            <div class="col">
+                <ion-icon name="heart-outline"></ion-icon>
+				Favorites
+            </div>
+        </a>
+        <a href="visitors.html" class="item">
+            <div class="col">
+				<ion-icon name="eye-outline"></ion-icon>
+				Visitors
+            </div>
+        </a>
+        <a href="chatlist.html" class="item">
+            <div class="col">
+                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                <span class="badge badge-danger">5</span>
+				Messages
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+
+    <!-- ============== Js Files ==============  -->
+    <!-- Bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- ProgressBar js -->
+    <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+	<script>
+		$(document).ready(function() {			
+			var acordion_content;
+			var acordion_count = 0;
+			$.ajax({    
+				type: "GET",
+				url: "https://suggaro.eadcloud.eu/API/get_faq.php",
+				dataType: "html",                  
+				success: function(results){ 
+					var results = $.parseJSON(results);
+					var acordion_content="";
+					if(results['status']==true){
+						
+						$.each(results.data, function(key, group){
+							acordion_count++;
+							
+							if(group.group_slug!="pages" && group.group_slug!="privacies"){
+								console.log("Key: "+key+", Group: "+group.name);
+								acordion_content += '<div class="section full mt-2">'
+															+'<div class="section-title">'+group.name+'</div>'
+															+'<div class="accordion" id="accordion_faq_'+acordion_count+'">';
+								$.each(group.articles, function(artclkey, articleContent){
+									console.log("Article Key: "+artclkey+", Group: "+articleContent.subject);
+									acordion_content += '<div class="accordion-item">'
+														+'<h2 class="accordion-header">'
+															+'<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion_'+acordion_count+'_'+artclkey+'">'
+																+articleContent.subject
+															+'</button>'
+														+'</h2>'
+														+'<div id="accordion_'+acordion_count+'_'+artclkey+'" class="accordion-collapse collapse" data-bs-parent="#accordion_faq_'+acordion_count+'">'
+															+'<div class="accordion-body">'
+																+articleContent.description
+															+'</div>'
+														+'</div>'
+													+'</div>';
+								
+								});								
+								acordion_content += '</div></div>';
+							}
+						});
+					}
+					else{
+						var acordion_content = 	'<div class="error-page">'
+											+'<img src="assets/img/logo/suggaro_logo_250px.png" alt="alt" class="imaged square w200">'
+											+'<h1 class="title">We are working on it!</h1>'
+											+'<div class="text mb-5">'
+												+'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+											+'</div>'
+
+											+'<div class="fixed-footer">'
+												+'<div class="row">'
+													+'<div class="col-12">'
+														+'<a href="#" class="btn btn-primary btn-lg btn-block">Go Back</a>'
+													+'</div>'
+												+'</div>'
+											+'</div>'
+										+'</div>';
+					}
+					
+					$('#accordion_faq').html(acordion_content);
+				}
+		
+			});	
+
+		});
+		
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script type="text/javascript">
+        navigator.geolocation.getCurrentPosition(success, error);
+        function success(position) {
+			console.log(position);
+            var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + position.coords.latitude + '%2C' + position.coords.longitude + '&language=en&key=AIzaSyDSLtgzMEudFOjFY7vtPAunAU8kkJIAj2I';
+            $.getJSON(url).done(function (location) {
+				console.log(location);
+                var address = [];
+                for (var ac = 0; ac < location.results.length; ac++) {
+                    var component = location.results[ac];
+                    switch (component.types[0]) {
+                        case 'locality':
+                            address['city'] = component.formatted_address.split(',')[0];
+                            break;
+                        case 'administrative_area_level_1':
+                            address['state'] = component.formatted_address.split(',')[0];
+                            break;
+                        case 'country':
+                            address['country'] = component.formatted_address;
+                            break;
+                    }
+                };
+
+                $('[id*=City]').html(address['city']);
+                $('[id*=State]').html(address['state']);
+                $('[id*=Country]').html(address['country']);
+            })
+        }
+        function error(response) {
+            alert(response.responseText);
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>City:</td>
+            <td><span id="City"></span></td>
+        </tr>
+        <tr>
+            <td>State:</td>
+            <td><span id="State"></span></td>
+        </tr>
+        <tr>
+            <td>Country:</td>
+            <td><span id="Country"></span></td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

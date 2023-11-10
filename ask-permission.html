@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>SUGGARO APP</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="manifest" href="__manifest.json">
+</head>
+<body class="bg-white">
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader no-border transparent position-absolute">
+        <div class="left">
+            <a href="register.html" class="headerButton goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle"></div>
+    </div>
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="login-form">
+            <div class="section">
+                <img src="assets/img/sample/photo/vector4.png" alt="image" class="form-image">
+            </div>
+            
+            <div class="section">
+                <h2 class="text-center mt-2">PERMISSION</h2>
+            </div>
+            <div class="section">
+                <p class="text-center mt-2">Would you like us to display your representing flag on your profile?</p   >
+            </div>
+            <div class="form-group-boxed">
+                 <a href="your-profile-picture.html?permission=yes" class="btn btn-primary btn-block btn-lg preference-stage-btn mt-5">Yes, please</a>
+            </div>
+
+            <div class="form-group-boxed">
+                <a href="your-profile-picture.html?permission=no" class="btn btn-primary btn-block btn-lg preference-stage-btn mt-5">No, thank you</a>
+           </div>
+        </div>
+	</div>
+    <!-- * App Capsule -->
+    <!-- ============== Js Files ==============  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- ProgressBar js -->
+    <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+	<script>
+		var loader = document.getElementById('loader');
+		$(document).ready(function() {				
+			var role = getUrlVarss()["role"];
+			localStorage.setItem("role", role);	
+			//-----------------------------------------------------------------------
+			// Page Loader
+			//----------------------------------------------------------------------
+			setTimeout(() => {
+				loader.setAttribute("style", "pointer-events: none; opacity: 0; transition: 0.2s ease-in-out;");
+				setTimeout(() => {
+					loader.setAttribute("style", "display: none;")
+				}, 1000);
+			}, 450);
+			//-----------------------------------------------------------------------		
+			
+		});
+		function getUrlVarss(){var vars = {};var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {vars[key] = value;});return vars;}
+
+	</script>
+
+</body>
+
+</html>

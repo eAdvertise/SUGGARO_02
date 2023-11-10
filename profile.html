@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>SUGGARO</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <link rel="icon" type="image/png" href="assets/img/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/apple-icon-180x180.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css?v1.1">
+    <link rel="manifest" href="assets/img/icons/manifest.json">
+</head>
+
+<body class="chat_page">
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader bg-primary text-light">
+        <div class="left">
+            <a href="index.html" class="headerButton goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">
+            Hello <span id="header_role"></span>
+        </div>
+        <div class="right">
+            
+        </div>
+    </div>
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="section mt-2">
+            <div class="profile-head">
+				<div class="avatar">                   
+					<img src="assets/img/Avatar-male.jpg" alt="avatar" id="avatar" class="imaged w64 rounded">
+				</div>
+                <div class="in">
+                    <h3 class="name" id="username"></h3>					
+                    <a href="" class="" data-bs-toggle="modal" data-bs-target="#DialogBlockButton">
+						Edit my Profile
+					</a>
+                </div>
+                <div class="in" style="margin-left: 9px;margin-top: -17px;">
+					
+					<!-- Dialog Block Button -->
+					<div class="modal fade dialogbox" id="DialogBlockButton" data-bs-backdrop="static" tabindex="-1" role="dialog">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Edit Profile</h5>
+								</div>
+								<div class="modal-body">
+									What do you want to edit?
+								</div>
+								<div class="modal-footer">
+									<div class="btn-list">
+										<a href="./edit-profile-personal.html" class="btn btn-text-secondary btn-block">Personal Details</a>
+										<a href="./change-picture.html" class="btn btn-text-secondary btn-block">Change Profile Pic</a>
+										<a href="./edit-profile-statistics.html" class="btn btn-text-secondary btn-block">Statistics</a>
+										<a href="./edit-profile-login-details.html" class="btn btn-text-secondary btn-block">Change Password</a>
+										<a href="#" class="btn btn-text-primary btn-block" data-bs-dismiss="modal">Close Window</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- * Dialog Block Button -->
+                </div>
+            </div>
+        </div>
+
+        <div class="section full mt-2">
+            <div class="profile-stats ps-2 pe-2">
+                <a class="item">
+                    <strong id="age"></strong>age
+                </a>
+                <a class="item">
+                    <strong id="height"></strong>height 
+                </a>
+                <a class="item">
+                    <strong id="needs">27k</strong>needs
+                </a>
+
+                <a class="item">
+                    <strong id="register"></strong>register
+                </a>
+            </div>
+        </div>
+
+        <div class="section mt-1 mb-2">
+            <div class="profile-info">
+                <div class="bio" id="bio"></div>
+            </div>
+        </div>
+
+        <div class="section full">
+            <div class="wide-block transparent p-0">
+                <ul class="nav nav-tabs lined iconed" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#feed" role="tab">
+                            <ion-icon name="grid-outline"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#statistics" role="tab">
+                            <ion-icon name="stats-chart-outline"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#what-i-offer" role="tab">
+                            <ion-icon name="rose-outline"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#what-i-expect" role="tab">
+                            <ion-icon name="sparkles-outline"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- tab content -->
+        <div class="section full mb-2">
+            <div class="tab-content">
+
+                <!-- feed -->
+                <div class="tab-pane fade show active" id="feed" role="tabpanel">
+                    <div class="mt-2 p-2 pt-0 pb-0">
+                        <div class="row">
+                            <div class="col-4 mb-2">
+                                <img src="assets/img/users/samples/2.jpg" alt="image" id="gallery_item_01" class="imaged w-100">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="p-2 pt-0 pb-0">
+                        <div class="wide-block pb-2 pt-2">
+
+							<form>
+								<div class="custom-file-upload" id="fileUpload1">
+									<input type="file" id="fileuploadInput" accept=".png, .jpg, .jpeg">
+									<label for="fileuploadInput">
+										<span>
+											<strong>
+												<ion-icon name="cloud-upload-outline"></ion-icon>
+												<i>Tap to Upload</i>
+											</strong>
+										</span>
+									</label>
+								</div>
+							</form>
+
+						</div>
+
+                    </div>
+                </div>
+                <!-- * feed -->
+
+                <!-- * statistics -->
+                <div class="tab-pane fade" id="statistics" role="tabpanel">
+                        <div class=" h4 mt-2">
+                            <h4>STATISTICS</h4></div>
+                            <div class="wide-block p-0">
+                                <div class="table-responsive statistics-profile">
+                                    <table class="table bg-primary">
+                                        <tbody>
+                                            <tr>
+                                                <th class="statistics-size" scope="row">Height:</th>
+                                                <td id="tdheight"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="statistics-weight" scope="row">Weight:</th>
+                                                <td id="tdweight"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="statistics-country" scope="row">Country:</th>
+                                                <td id="tdcountry"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="statistics-nationality" scope="row">Nationality:</th>
+                                                <td id="tdnationality"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="statistics-ethnicity" scope="row">Ethnicity:</th>
+                                                <td id="tdethnicity"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="statistics-eye" scope="row">Eye Color:</th>
+                                                <td id="tdeye"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="statistics-brest" scope="row">Brest Size:</th>
+                                                <td id="tdbrest"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="statistics-hair-length" scope="row">Hair length:</th>
+                                                <td id="tdhairlength"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="statistics-hair-color" scope="row">Hair color:</th>
+                                                <td id="tdhaircolor"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="statistics-i-am" scope="row">I am:</th>
+                                                <td id="tdiam"><span id="tdgender"></span>, <span id="tdrole"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="statistics-tattoos" scope="row">Tattoos:</th>
+                                                <td id="tdtatoos"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                        </div>
+
+                        <div class=" h4 mt-2">
+                            <h4>DETAILS</h4></div>
+                            <div class="wide-block p-0">
+                                <div class="table-responsive statistics-profile">
+                                    <table class="table bg-primary">
+                                        <tbody>
+                                            <tr>
+                                                <th class="details-last-online" scope="row">Last online:</th>
+                                                <td id="tdlasttimelogin"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                </div>
+                <!-- * statistics -->
+
+                <!--  what i offer -->
+                <div class="tab-pane fade" id="what-i-offer" role="tabpanel">
+                    <div class=" h4 mt-2">
+                        <h4>What I offer to my <span id="offer_searchfor"><span></h4>
+                    </div>
+                    <div class="container">
+                        <label class="" for="">
+                            <img src="assets/img/hand-shake.svg" alt="hand-shake" class="handshake-icon" style="display:inline-block">
+                            Shows the accordance of my wishes
+                        </label>
+                        <div class="wide-block p-0 mt-2">
+                            <div class="table-responsive what-i-offer-profile">
+                                <table class="table bg-profile-chip">
+                                    <tbody>
+                                        <tr>
+                                            <th class="offer-whatsapp" scope="row">
+                                                <img src="assets/img/hand-shake.svg" alt="hand-shake" id="whatsup-offer" class="handshake-icon">
+                                            </th>
+                                            <td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="logo-whatsapp"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Share WhatsApp etc...</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="offer-travel" scope="row">
+												<img src="assets/img/hand-shake.svg" alt="hand-shake" id="travel-offer" class="handshake-icon">
+											</th>
+                                            <td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="airplane-outline"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Able to travel together</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="offer-longterm" scope="row">
+												<img src="assets/img/hand-shake.svg" alt="hand-shake" id="longterm-offer" class="handshake-icon">
+                                            </th>
+											<td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="heart-outline"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Longterm daddy-relation</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="offer-dinner" scope="row">
+												<img src="assets/img/hand-shake.svg" alt="hand-shake" id="dinner-offer" class="handshake-icon">
+											</th>
+                                            <td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="wine-outline"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Dinner together</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="offer-videochat" scope="row">
+												<img src="assets/img/hand-shake.svg" alt="hand-shake" id="videochat-offer" class="handshake-icon">
+                                            </th>
+                                            <td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="videocam-outline"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Video chat</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="offer-sexy-pics" scope="row">
+												<img src="assets/img/hand-shake.svg" alt="hand-shake" id="sexypics-offer" class="handshake-icon">
+                                            </th>
+                                            <td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="flame-outline"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Sexy pictures</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="offer-sexy-vids" scope="row">
+												<img src="assets/img/hand-shake.svg" alt="hand-shake" id="sexyvids-offer" class="handshake-icon">
+												
+                                            </th>
+                                            <td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="flame-outline"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Sexy videos</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="offer-erotic-pics-vids" scope="row">
+												<img src="assets/img/hand-shake.svg" alt="hand-shake" id="eroticcontent-offer" class="handshake-icon">
+                                            </th>
+                                            <td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="flame" class="erotic-icon"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Erotic pictures or videos</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>
+                </div>
+            </div>
+                <!-- * what i offer -->
+
+                <!-- what i expect -->
+                <div class="tab-pane fade" id="what-i-expect" role="tabpanel">
+                    <div class=" h4 mt-2">
+                        <h4>What I expect from my <span id="expect_searchfor"><span></h4>
+                    </div>
+                    <div class="container">
+                        <label class="" for="">
+                            <img src="assets/img/hand-shake.svg" alt="hand-shake" class="handshake-icon" style="display:inline-block">
+                            Shows the accordance of my offers
+                        </label>
+                        <div class="wide-block p-0 mt-2">
+                            <div class="table-responsive what-i-offer-profile">
+                                <table class="table bg-profile-chip">
+                                    <tbody>
+                                        <tr>
+                                            <th class="expect-talk-phone" scope="row">
+												<img src="assets/img/hand-shake.svg" alt="hand-shake" id="phone-expect" class="handshake-icon">
+                                            </th>
+                                            <td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="call-outline"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Talk on the phone</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="expect-meet" scope="row">
+												<img src="assets/img/hand-shake.svg" alt="hand-shake" id="meet-expect" class="handshake-icon">
+                                            </th>
+                                            <td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="people-outline"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Meet in person</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="expect-video" scope="row">
+												<img src="assets/img/hand-shake.svg" alt="hand-shake" id="video-expect" class="handshake-icon">
+                                            </th>
+                                            <td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="videocam-outline"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Video chat</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="expect-phone-no" scope="row">
+												<img src="assets/img/hand-shake.svg" alt="hand-shake" id="sharephone-expect" class="handshake-icon">
+                                            </th>
+                                            <td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="phone-portrait-outline"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Share phone numbers</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="expect-whatsapp" scope="row">
+												<img src="assets/img/hand-shake.svg" alt="sharewhatsapp-shake" id="whatsapp-expect" class="handshake-icon">
+                                            </th>
+                                            <td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="logo-whatsapp"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Share WhatsApp etc...</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="expect-study-allowance" scope="row">
+												<img src="assets/img/hand-shake.svg" alt="hand-shake" id="studyallownce-expect" class="handshake-icon">
+                                            </th>
+                                            <td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="cash-outline"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Allowances for study</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="expect-daily-allowance" scope="row">
+												<img src="assets/img/hand-shake.svg" alt="hand-shake" id="dailyallowances-expect" class="handshake-icon">
+                                            </th>
+                                            <td>
+                                                <div class="chip chip-media chip-offer bg-icon-txt">
+                                                    <i class="chip-icon bg-dark">
+                                                        <ion-icon size="large" name="cash-outline"></ion-icon>
+                                                    </i>
+                                                    <span class="chip-label">Allowances for daily life</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- * what i expect -->
+            </div>
+        </div>
+        <!-- * tab content -->
+
+    </div>
+    <!-- * App Capsule -->
+
+    <!-- * App Upgrade sidebar -->
+     <!-- ============== Js Files ==============  -->
+    <!-- Bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- ProgressBar js -->
+    <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+	<script>
+		var loader = document.getElementById('loader');
+		$(document).ready(function() {	
+			getLocation();
+			if ((localStorage.getItem('contact_id') === null) || (localStorage.getItem('contact_id') === "undefined") || localStorage.getItem('contact_id') === " ") {
+				window.location = "./login.html";
+			}
+			
+				var postdata = {
+				  id: localStorage.getItem('client_id'),
+				  contactid: localStorage.getItem('contact_id')
+				};
+				$.ajax({    
+					type: "POST",
+					url: "https://suggaro.eadcloud.eu/API/get_contact.php",             
+					data: postdata,
+					dataType: "json",
+					encode: true,                  
+					success: function(data){
+						arr = data['customfields']; 
+						if(data['profile_image']!=null){
+							$("#avatar").attr("src","https://suggaro.eadcrm.eu/uploads/client_profile_images/"+localStorage.getItem('contact_id')+"/thumb_"+data['profile_image']);
+							$("#gallery_item_01").attr("src","https://suggaro.eadcrm.eu/uploads/client_profile_images/"+localStorage.getItem('contact_id')+"/thumb_"+data['profile_image']);
+							localStorage.setItem("profilepic", "thumb_"+data['profile_image']);
+						}
+						$.each(arr, function(key, customefield){
+							if(customefield.label === "Username"){
+								$("#username").html(customefield.value);
+								localStorage.setItem("username", customefield.value);										
+							}
+							if(customefield.label === "Gender"){
+								localStorage.setItem("gender", customefield.value);
+							}
+							if(customefield.label === "Role"){
+								var role = customefield.value;
+								var searchfor;
+								if(role.replace(/[^a-z0-9\s]/gi, '')==="Daddy"){
+									searchfor = "Baby";
+								}
+								else if(role.replace(/[^a-z0-9\s]/gi, '')==="Mummy"){
+									searchfor = "Baby";
+								}
+								else if(role.replace(/[^a-z0-9\s]/gi, '')==="Babe"){
+									if(localStorage.getItem("gender") == "Daddy" || localStorage.getItem("gender") == "[Daddy]" || localStorage.getItem("gender") == "Mummy" || localStorage.getItem("gender") == "[Mummy]"){
+										searchfor = "Baby";
+									}
+								}
+								
+								else{
+									searchfor = "Baby or Daddy";
+								}
+								
+								localStorage.setItem("searchfor", searchfor);
+								$("#header_role").html(role.replace(/[^a-z0-9\s]/gi, ''));
+								$("#expect_searchfor").html(searchfor);
+								$("#offer_searchfor").html(searchfor);
+							}
+							if(customefield.label === "Country"){
+								localStorage.setItem("country", customefield.value);
+							}
+							if(customefield.label === "Location"){
+								localStorage.setItem("location", customefield.value);
+							}
+							if(customefield.label === "Birthday"){
+								var newDate = customefield.value;
+								newDate = getFormattedDate(newDate);
+								$("#age").html(getAge(newDate) + "yo");
+							}
+							if(customefield.label === "Height"){
+								$("#height").html(customefield.value + "cm");
+							}
+							if(customefield.label === "Bio"){
+								$("#bio").html(customefield.value);
+							}
+							if(customefield.label === "Needs"){
+								if(customefield.value==""){
+									$("#needs").html("N/A");
+								}
+								else{
+									$("#needs").html(customefield.value);
+								}
+							}
+						
+						});	
+						var login_diff =  Math.abs(new Date() - new Date(data['datecreated']));
+						var login_seconds = Math.floor(login_diff/1000); //ignore any left over units smaller than a second
+						var login_days = Math.floor(login_seconds/86400);
+						var login_months = parseInt(login_days / 30.41);
+						var login_years = parseInt(login_days / 365);
+						var returntext;
+						if(login_years > 0){
+							login_days = login_days - (login_years * 365);
+							if(login_days > 0){
+								returntext = login_years+"Y+"+login_days+"D";
+							}
+							else{
+								returntext = login_years+"Y";
+							}
+						}
+						else{
+							returntext = login_days+"D";
+						}
+						$("#register").html(returntext);	
+						/*Get Custom Field from Database*/
+						
+						$.ajax({    
+						type: "POST",
+						url: "https://suggaro.eadcloud.eu/API/get_user_custom_fields.php",             
+						data: postdata,
+						dataType: "json",
+						encode: true,                  
+						success: function(data2){ 
+							$.each(data2, function(key, customefield){
+								/*Start Table Setup*/
+								if(customefield.label === "Height"){
+									$("#tdheight").html(customefield.value+"cm");						
+								}
+								if(customefield.label === "Weight"){
+									$("#tdweight").html(customefield.value+"kg");						
+								}
+								if(customefield.label === "Nationality"){
+									$("#tdnationality").html(customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-')); 
+								}
+								if(customefield.label === "Ethnicity"){
+									$("#tdethnicity").html(customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-')); 
+								}
+								if(customefield.label === "Country"){
+									$("#tdcountry").html(customefield.value); 
+								}
+								if(customefield.label === "Eye Color"){
+									$("#tdeye").html(customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-')); 
+								}
+								if(customefield.label === "Hair Color"){
+									$("#tdhaircolor").html(customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-')); 
+								}
+								if(customefield.label === "Hair Length"){
+									$("#tdhairlength").html(customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-')); 
+								}
+								if(customefield.label === "Brest"){
+									$("#tdbrest").html(customefield.value);						
+								}
+								if(customefield.label === "Tattoos"){
+									$("#tdtatoos").html(customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-'));	
+								}
+								if(customefield.label === "Gender"){
+									$("#tdgender").html(customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-'));	
+								}
+								if(customefield.label === "Role"){
+									$("#tdrole").html(customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-'));	
+								}
+								/*End of Table Setup*/
+								/*Start what i offer Offer Setup*/
+								if(customefield.label === "Offer"){
+									$.each(JSON.parse(customefield.value), function( i, val ){
+										if(val === " Share WhatsApp" || val === "Share WhatsApp"){
+											$("#whatsup-offer").css("display","inline-block");
+										}
+										if(val === " Able to travel together" || val === "Able to travel together"){
+											$("#travel-offer").css("display","inline-block");
+										}
+										if(val === " Longterm relation" || val === "Longterm relation"){
+											$("#longterm-offer").css("display","inline-block");
+										}
+										if(val === " Dinner together" || val === "Dinner together"){
+											$("#dinner-offer").css("display","inline-block");
+										}
+										if(val === " Video Chat" || val === "Video Chat"){
+											$("#videochat-offer").css("display","inline-block");
+										}
+										if(val === " Sexy pictures" || val === "Sexy pictures"){
+											$("#sexypics-offer").css("display","inline-block");
+										}
+										if(val === " Sexy videos" || val === "Sexy videos"){
+											$("#sexyvids-offer").css("display","inline-block");
+										}
+										if(val === " Erotic pictures or videos" || val === "Erotic pictures or videos"){
+											$("#eroticcontent-offer").css("display","inline-block");
+										}
+									
+									});	
+								}
+								/*End what i offer Offer Setup*/
+								/*Start what i expect Offer Setup*/
+								if(customefield.label === "Expect"){
+									$.each(JSON.parse(customefield.value), function( i, val ){
+										if(val === " Talk on the phone" || val === "Talk on the phone"){
+											$("#phone-expect").css("display","inline-block");
+										}
+										if(val === " Meet in person" || val === "Meet in person"){
+											$("#meet-expect").css("display","inline-block");
+										}
+										if(val === " Video chat" || val === "Video chat"){
+											$("#video-expect").css("display","inline-block");
+										}
+										if(val === " Share phone numbers" || val === "Share phone numbers"){
+											$("#sharephone-expect").css("display","inline-block");
+										}
+										if(val === " Share WhatsApp etc" || val === "Share WhatsApp etc"){
+											$("#whatsapp-expect").css("display","inline-block");
+										}
+										if(val === " Allowances for study" || val === "Allowances for study"){
+											$("#studyallownce-expect").css("display","inline-block");
+										}
+										if(val === " Allowances for daily life" || val === "Allowances for daily life"){
+											$("#dailyallowances-expect").css("display","inline-block");
+										}
+									});
+								}
+								/*End what i expect Offer Setup*/
+								
+							});	
+							//-----------------------------------------------------------------------
+							// Page Loader
+							//----------------------------------------------------------------------
+							setTimeout(() => {
+								loader.setAttribute("style", "pointer-events: none; opacity: 0; transition: 0.2s ease-in-out;");
+								setTimeout(() => {
+									loader.setAttribute("style", "display: none;")
+								}, 1000);
+							}, 450);
+							//-----------------------------------------------------------------------	
+						}				
+					});
+						
+					}				
+				});			
+		});
+		function getFormattedDate(datestring) {
+			const date = new Date(datestring);
+			let year = date.getFullYear();
+			let month = (1 + date.getMonth()).toString().padStart(2, '0');
+			let day = date.getDate().toString().padStart(2, '0');
+		  
+			return month + '/' + day + '/' + year;
+		}
+		function getAge(dateString) {
+		  var now = new Date();
+		 
+		  var yearNow = now.getFullYear();
+		  var monthNow = now.getMonth();
+		  var dateNow = now.getDate();
+		 //date must be mm/dd/yyyy		  
+		  var dob = new Date(dateString.substring(6,10),
+							 dateString.substring(0,2)-1,                   
+							 dateString.substring(3,5)                  
+							 );
+		 
+		  var yearDob = dob.getFullYear();
+		  var monthDob = dob.getMonth();
+		  var dateDob = dob.getDate();
+		  var age = {};
+		  var ageString = "";
+		  var yearString = "";
+		  var monthString = "";
+		  var dayString = "";
+		 
+		 
+		  yearAge = yearNow - yearDob;
+		 
+		  if (monthNow >= monthDob)
+			var monthAge = monthNow - monthDob;
+		  else {
+			yearAge--;
+			var monthAge = 12 + monthNow -monthDob;
+		  }
+		 
+		  if (dateNow >= dateDob)
+			var dateAge = dateNow - dateDob;
+			else {
+				monthAge--;
+				var dateAge = 31 + dateNow - dateDob;
+		 
+				if (monthAge < 0) {
+					monthAge = 11;
+					yearAge--;
+				}
+			}
+		 
+			age = {
+				years: yearAge,
+			};
+			ageString = age.years;
+			return ageString;
+		}
+
+	</script>
+	<script>
+
+
+function getLocation() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition);
+	} else {
+		alert("Geolocation is not supported by this browser.");
+	}
+}
+
+function showPosition(position) {
+	//alert("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
+}
+</script>
+
+</body>
+
+</html>

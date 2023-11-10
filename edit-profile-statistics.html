@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>SUGGARO</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <link rel="icon" type="image/png" href="assets/img/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/apple-icon-180x180.png">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css?v0.0.1">
+    <link rel="stylesheet" href="assets/css/custom.css?v0.0.1">
+    <link rel="manifest" href="assets/img/icons/manifest.json">
+    <link href="assets/js/plugins/Country-Selecter-with-Flags-flagstrap/dist/css/flags.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader bg-primary text-light">
+        <div class="left">
+            <a href="javascript:;" class="headerButton goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">Informations</div>
+        <div class="right">
+        </div>
+    </div>
+    <!-- * App Header -->
+
+	
+	<!-- App Content -->
+		<!-- App Capsule -->
+		<div id="appCapsule">
+			<form id="statistics_form">
+				<div class="section full mt-2 mb-2">
+					<div class="section-title"></div>
+					<div class="wide-block pb-1 pt-1">
+						<ul class="listview image-listview no-line no-space flush">
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="transgender-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="gender">Gender</label>
+												<select class="custom-select" aria-label="What is your Gender" name="gender" id="gender" data-fieldid=""></select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="heart-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="orientation">Sexual Orientation</label>
+												<select class="custom-select" aria-label="What is your Sexual Orientation" name="orientation" id="orientation" data-fieldid=""></select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="heart-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="role">Role</label>
+												<select class="custom-select" aria-label="What is your Role" name="role" id="role" data-fieldid=""></select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="pulse-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="interest">Interest in</label>
+												<select class="custom-select" aria-label="Default select example" name="interest" id="interest" data-fieldid=""></select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="people-circle-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="height">Height</label>
+												<input type="input" class="form-control" name="height" id="height" data-fieldid="" placeholder="Enter your Height">
+												<i class="clear-input">
+													<ion-icon name="close-circle"></ion-icon>
+												</i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="people-circle-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="basic">Nationality</label>
+												<div id="flagstrap"
+													data-button-size="btn-md"
+													data-selected-country=""
+													data-button-type="btn-text-primary shadowed me-1 mb-1"
+													data-scrollable-height="250px"
+													data-scrollable="true"
+													data-fieldid="">
+												</div>
+												 <input type="hidden" name="nationality" id="nationality" data-fieldid="">
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="people-circle-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="ethnicity">Ethnicity</label>
+												<select class="custom-select" aria-label="What is your Ethnicity" name="ethnicity" id="ethnicity" data-fieldid=""></select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="eye-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="eye">Eyes Color</label>
+												<select class="custom-select" aria-label="What is your Eyes Color" name="eye" id="eye" data-fieldid=""></select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<i class="bi bi-palette2"></i>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="haircolor">Hair Color</label>
+												<select class="custom-select" aria-label="What is your Hair color" name="haircolor" id="haircolor" data-fieldid=""></select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<i class="bi bi-palette2"></i>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="hairlength">Hair length</label>
+												<select class="custom-select" aria-label="What is your Hair length" name="hairlength" id="hairlength" data-fieldid=""></select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="heart-circle-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div class="form-group basic">
+											<div class="input-wrapper">
+												<label class="form-label" for="brest">Brest Size</label>
+												<input type="input" class="form-control" name="brest" id="brest" data-fieldid="" placeholder="Enter your Brest Size">
+												<i class="clear-input">
+													<ion-icon name="close-circle"></ion-icon>
+												</i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<i class="bi bi-palette"></i>
+									</div>
+									<div class="in">
+										<div>
+											Tattoos
+											<div class="text-muted">Do you Have Tattoos?</div>
+										</div>
+										<div class="form-check form-switch">
+											<input class="form-check-input" type="checkbox" name="tattoos" id="tattoos" value"Yes" data-fieldid="" />
+											<label class="form-check-label" for="tattoos"></label>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon-box bg-primary">
+										<ion-icon name="locate-outline"></ion-icon>
+									</div>
+									<div class="in">
+										<div>
+											Nearby
+											<div class="text-muted">Available Nearby search?</div>
+										</div>
+										<div class="form-check form-switch">
+											<input class="form-check-input" name="nearby" type="checkbox" id="nearby" value="On" data-fieldid="" />
+											<label class="form-check-label" for="nearby"></label>
+										</div>
+									</div>
+								</div>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="form-group-boxed mt-2">
+					<button type="submit" class="btn btn-primary btn-block btn-lg login-phase-btn">Update</button>
+                </div>
+			</form>
+			
+		</div>
+	<!-- * App Capsule -->
+	
+	<!-- *App Conten -->
+	
+	
+    <!-- ============== Js Files ==============  -->
+    <!-- Bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="assets/js/plugins/Country-Selecter-with-Flags-flagstrap/dist/js/jquery.flagstrap.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- ProgressBar js -->
+    <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+	<script>
+		
+		var loader = document.getElementById('loader');
+		$(document).ready(function() {
+					
+			var formData = {
+				id: localStorage.getItem("client_id"),
+				contactid: localStorage.getItem("contact_id")
+			};
+			$.ajax({    
+				type: "POST",
+				url: "https://suggaro.eadcloud.eu/API/get_contact.php",             
+				data: formData,
+				dataType: "json",
+				encode: true,                  
+				success: function(data){ 
+					localStorage.setItem("email", data['email']);
+					/*Get Custom Field from Database*/
+					$.ajax({    
+						type: "POST",
+						url: "https://suggaro.eadcloud.eu/API/get_user_custom_fields.php",             
+						data: formData,
+						dataType: "json",
+						encode: true,                  
+						success: function(data2){ 
+							$.each(data2, function(key, customefield){
+								
+								if(customefield.label === "Height"){
+									$("#height").val(customefield.value);
+									$("#height").attr('data-fieldid', customefield.custom_field_id);							
+								}
+								if(customefield.label === "Nationality"){
+									$("#flagstrap").attr('data-selected-country', customefield.value);
+									$('#flagstrap').flagStrap({
+										onSelect: function(value, element) {
+											$("#nationality").val(value);
+										},
+									});
+									$("#nationality").val(customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-')); 
+									$("#nationality").attr('data-fieldid', customefield.custom_field_id);
+								}
+								if(customefield.label === "Ethnicity"){
+									$.each(JSON.parse(customefield.options), function( i, val ){
+										$('#ethnicity').append($('<option>', {
+											value: "["+val+"]",											
+											text: val
+										}));
+										
+									});
+									$("#ethnicity option[value='[" + customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-') + "]']").attr("selected","selected");	
+									$("#ethnicity").attr('data-fieldid', customefield.custom_field_id);
+								}
+								if(customefield.label === "Eye Color"){
+									$.each(JSON.parse(customefield.options), function( i, val ){
+										$('#eye').append($('<option>', {
+											value: "["+val+"]",											
+											text: val
+										}));
+										
+									});
+									$("#eye option[value='[" + customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-') + "]']").attr("selected","selected");	
+									$("#eye").attr('data-fieldid', customefield.custom_field_id);
+								}
+								if(customefield.label === "Hair Color"){
+									$.each(JSON.parse(customefield.options), function( i, val ){
+										$('#haircolor').append($('<option>', {
+											value: "["+val+"]",											
+											text: val
+										}));
+										
+									});
+									$("#haircolor option[value='[" + customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-') + "]']").attr("selected","selected");	
+									$("#haircolor").attr('data-fieldid', customefield.custom_field_id);
+								}
+								if(customefield.label === "Hair Length"){
+									$.each(JSON.parse(customefield.options), function( i, val ){
+										$('#hairlength').append($('<option>', {
+											value: "["+val+"]",											
+											text: val
+										}));
+										
+									});
+									$("#hairlength option[value='[" + customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-') + "]']").attr("selected","selected");	
+									$("#hairlength").attr('data-fieldid', customefield.custom_field_id);
+								}
+								if(customefield.label === "Brest"){
+									$("#brest").val(customefield.value);
+									$("#brest").attr('data-fieldid', customefield.custom_field_id);							
+								}
+								if(customefield.label === "Tattoos"){
+									if(customefield.value.replace(/[^a-z0-9\s-_]/gi, '')=="Yes"){
+										$("#tattoos").attr("checked","checked");	
+									}
+									$("#tattoos").attr('data-fieldid', customefield.custom_field_id);								
+									
+								}
+								if(customefield.label === "Gender"){
+									$.each(JSON.parse(customefield.options), function( i, val ){
+										$('#gender').append($('<option>', {
+											value: "["+val+"]",											
+											text: val
+										}));
+										
+									});
+									$("#gender option[value='[" + customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-') + "]']").attr("selected","selected");	
+									$("#gender").attr('data-fieldid', customefield.custom_field_id);
+								}
+								if(customefield.label === "Sexual Orientation"){
+									$.each(JSON.parse(customefield.options), function( i, val ){
+										$('#orientation').append($('<option>', {
+											value: "["+val+"]",											
+											text: val
+										}));
+										
+									});
+									$("#orientation option[value='[" + customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-') + "]']").attr("selected","selected");	
+									$("#orientation").attr('data-fieldid', customefield.custom_field_id);
+								}
+								if(customefield.label === "Role"){
+									$.each(JSON.parse(customefield.options), function( i, val ){
+										$('#role').append($('<option>', {
+											value: "["+val+"]",											
+											text: val
+										}));
+										
+									});
+									$("#role option[value='[" + customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-') + "]']").attr("selected","selected");	
+									$("#role").attr('data-fieldid', customefield.custom_field_id);
+								}
+								if(customefield.label === "Interest"){
+									$.each(JSON.parse(customefield.options), function( i, val ){
+										$('#interest').append($('<option>', {
+											value: "["+val+"]",											
+											text: val
+										}));
+										
+									});
+									$("#interest option[value='[" + customefield.value.replace(/[^a-z0-9\s-_]/gi, '').replace(/[\s_-]/g, '-') + "]']").attr("selected","selected");	
+									$("#interest").attr('data-fieldid', customefield.custom_field_id);
+								}
+								if(customefield.label === "Nearby"){
+									if(customefield.value.replace(/[^a-z0-9\s-_]/gi, '')=="On"){
+										$("#nearby").attr("checked","checked");	
+									}
+									$("#nearby").attr('data-fieldid', customefield.custom_field_id);
+								}
+							});
+							//-----------------------------------------------------------------------
+							// Page Loader
+							//----------------------------------------------------------------------
+							setTimeout(() => {
+								loader.setAttribute("style", "pointer-events: none; opacity: 0; transition: 0.2s ease-in-out;");
+								setTimeout(() => {
+									loader.setAttribute("style", "display: none;")
+								}, 1000);
+							}, 450);
+							//-----------------------------------------------------------------------									
+						}				
+					});
+				}				
+			});
+		});
+		$("#statistics_form").submit(function (event) {
+			var formData = {
+				userid: localStorage.getItem("contact_id"),
+				email: localStorage.getItem("email"),
+				orientation_val: $("#orientation").val(),
+				orientation_fieldid: $("#orientation").attr("data-fieldid"),
+				height_val: $("#height").val(),
+				height_fieldid: $("#height").attr("data-fieldid"),
+				nationality_val: $("#nationality").val(),
+				nationality_fieldid: $("#nationality").attr("data-fieldid"),
+				ethnicity_val: $("#ethnicity").val(),
+				ethnicity_fieldid: $("#ethnicity").attr("data-fieldid"),
+				eye_val: $("#eye").val(),
+				eye_fieldid: $("#eye").attr("data-fieldid"),
+				haircolor_val: $("#haircolor").val(),
+				haircolor_fieldid: $("#haircolor").attr("data-fieldid"),
+				hairlength_val: $("#hairlength").val(),
+				hairlength_fieldid: $("#hairlength").attr("data-fieldid"),
+				brest_val: $("#brest").val(),
+				brest_fieldid: $("#brest").attr("data-fieldid"),
+				tattoos_val: $("#tattoos").val(),
+				tattoos_fieldid: $("#tattoos").attr("data-fieldid"),
+				gender_val: $("#gender").val(),
+				gender_fieldid: $("#gender").attr("data-fieldid"),
+				role_val: $("#role").val(),
+				role_fieldid: $("#role").attr("data-fieldid"),
+				interest_val: $("#interest").val(),
+				interest_fieldid: $("#interest").attr("data-fieldid"),
+				nearby_val: $("#nearby").val(),
+				nearby_fieldid: $("#nearby").attr("data-fieldid"),
+				area_val: $("#area").val(),
+				area_fieldid: $("#area").attr("data-fieldid")
+			};	
+			$.ajax({
+				type: "POST",
+				url: "https://suggaro.eadcloud.eu/API/update_user_statistics.php",
+				data: formData,
+				dataType: "json",
+				encode: true,
+				success: function(data){ 
+					console.log(data);	
+					window.location = "./profile.html";	
+				}
+			});
+			event.preventDefault();
+		});
+	</script>
+
+
+</body>
+
+</html>

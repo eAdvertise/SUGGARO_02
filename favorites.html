@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>SUGGARO APP</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css?v0.0.1">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="manifest" href="__manifest.json">
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader bg-primary scrolled">
+        <div class="left">
+            <a href="#" class="headerButton" data-bs-toggle="offcanvas" data-bs-target="#sidebarPanel">
+                <!-- profile box -->
+				<div class="profileBox pb-buttom">
+					<div class="image-wrapper">
+						<img src="assets/img/logo/suggaro_logo_250px.png" alt="image" id="avatar" class="imaged rounded noborder">
+					</div>
+				   
+				</div>
+				<!-- * profile box -- >
+				<ion-icon name="menu-outline"></ion-icon>-->
+            </a>
+			<a href="#" class="headerButton header-filter-box" data-bs-toggle="offcanvas" data-bs-target="#filtersidebarPanel">
+				<ion-icon name="options-outline"></ion-icon>
+			</a>
+			<a href="#" class="headerButton header-change">
+				<i class="bi bi-arrow-left-right"></i>
+			</a>
+        </div>
+        <div class="pageTitle">
+            
+        </div>
+        <div class="right">
+           
+        </div>
+    </div>
+    <!-- * App Header -->
+
+	
+	<!-- App Content -->
+		<!-- App Capsule -->
+		<div id="appCapsule">
+			<div class="section mt-2">
+				<div class="row" id="users_grid"></div>
+			</div>
+
+			<div class="section mt-2">
+				
+			</div>
+		
+		
+		</div>
+		<!-- * App Capsule -->
+	
+	<!-- *App Conten -->
+
+
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="index.html" class="item">
+            <div class="col">
+                <ion-icon name="disc-outline"></ion-icon>
+				Nearby
+            </div>
+        </a>
+        <a href="global.html" class="item">
+            <div class="col">
+                <ion-icon name="earth-outline"></ion-icon>
+				Global
+            </div>
+        </a>
+        <a href="nearby.html" class="item active">
+            <div class="col">
+                <ion-icon name="heart-outline"></ion-icon>
+				Favorites
+            </div>
+        </a>
+        <a href="visitors.html" class="item">
+            <div class="col">
+				<ion-icon name="eye-outline"></ion-icon>
+				Visitors
+            </div>
+        </a>
+        <a href="chatlist.html" class="item">
+            <div class="col">
+                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                <span class="badge badge-danger"></span>
+				Messages
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+	
+    <!-- App Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarPanel">
+        <div class="offcanvas-body">
+            <!-- profile box -->
+            <div class="profileBox">
+                <div class="image-wrapper">
+                    <img src="assets/img/Avatar-male.jpg" alt="image" id="avatar_sidebar" class="imaged rounded">
+                </div>
+                <div class="in">
+                    <strong id="username"></strong>
+                    <div class="text-muted">
+                        <ion-icon name="location"></ion-icon>
+                        <span id="location"></span>
+                    </div>
+                </div>
+                <a href="#" class="close-sidebar-button" data-bs-dismiss="offcanvas">
+                    <ion-icon name="close"></ion-icon>
+                </a>
+            </div>
+            <!-- * profile box -->
+
+            <div class="listview-title mt-2 mb-1">
+                <span>ACCOUNT OVERVIEW</span>
+            </div>
+            <ul class="listview flush transparent no-line image-listview mt-2">
+                <li>
+                    <a href="profile.html" class="item">
+                        <div class="icon-box bg-primary">
+                           <ion-icon name="create-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            My Profile
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="images-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Photo Gallery
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            <div>Delete my Profile</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./logout.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            <div>Logout</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+			<div class="listview-title mt-2 mb-1">
+                <span>LEGAL INFORMATIONS</span>
+            </div>
+            <ul class="listview flush transparent no-line image-listview mt-2">
+                <li>
+                    <a href="page.html?article=about-suggaro" class="item">
+                        <div class="in">
+                            About SUGGARO
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page.html?article=term-of-use" class="item">
+                        <div class="in">
+                            Terms of Service
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page.html?article=privacy-policy" class="item">
+                        <div class="in">
+                            <div>Privacy Policy</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item">
+                        <div class="in">
+                            <div>Cookies Settings</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item">
+                        <div class="in">
+                            <div>Download my data</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page.html?article=advertise-on-suggaro" class="item">
+                        <div class="in">
+                            <div>Advertise on SUGGARO</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+			<div class="listview-title mt-2 mb-1">
+                <span>HELP CENTER</span>
+            </div>
+            <ul class="listview flush transparent no-line image-listview mt-2">
+                <li>
+                    <a href="faq.html" class="item">
+                        <div class="in">
+                            FAQ's
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="item">
+                        <div class="in">
+                            Contact us
+                        </div>
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="listview-title mt-2 mb-1">
+                <span>Friends</span>
+            </div>
+            <ul class="listview image-listview flush transparent no-line">
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar7.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Sophie Asveld</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar3.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Sebastian Bennett</div>
+                            <span class="badge badge-danger">6</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar10.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Beth Murphy</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar2.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Amelia Cabal</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar5.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Henry Doe</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- sidebar buttons -->
+        <div class="sidebar-buttons">
+            <a href="./profile.html" class="button">
+                <ion-icon name="person-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="archive-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="settings-outline"></ion-icon>
+            </a>
+            <a href="./logout.html" class="button">
+                <ion-icon name="log-out-outline"></ion-icon>
+            </a>
+        </div>
+        <!-- * sidebar buttons -->
+    </div>
+    <!-- * App Sidebar -->
+	<!-- App Filter Bar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="filtersidebarPanel">
+        <div class="offcanvas-body">
+			<!-- profile box -->
+            <div class="profileBox">
+                 <div class="image-wrapper">
+                    <img src="assets/img/icons/android-icon-72x72.png" alt="image" id="avatar_sidebar" class="imaged rounded">
+                </div>
+                <div class="in">
+                    <strong>Filters Bar</strong>
+                    <div class="text-muted">
+                        
+                    </div>
+                </div>
+                <a href="#" class="close-sidebar-button" data-bs-dismiss="offcanvas">
+                    <ion-icon name="close"></ion-icon>
+                </a>
+            </div>
+            <!-- * profile box -->
+            
+
+            <div class="listview-title mt-2 mb-1">
+                <span>Friends</span>
+            </div>
+            <ul class="listview image-listview flush transparent no-line">
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar7.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Sophie Asveld</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar3.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Sebastian Bennett</div>
+                            <span class="badge badge-danger">6</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar10.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Beth Murphy</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar2.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Amelia Cabal</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <img src="assets/img/sample/avatar/avatar5.jpg" alt="image" class="image">
+                        <div class="in">
+                            <div>Henry Doe</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- sidebar buttons -->
+        <div class="sidebar-buttons">
+            <a href="./profile.html" class="button">
+                <ion-icon name="person-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="archive-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="settings-outline"></ion-icon>
+            </a>
+            <a href="./logout.html" class="button">
+                <ion-icon name="log-out-outline"></ion-icon>
+            </a>
+        </div>
+        <!-- * sidebar buttons -->
+    </div>
+    <!-- * App filter Bar -->
+
+ 	<!-- Upgrade Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="upgradesidebarPanel">
+        <div class="offcanvas-body">
+			<!-- profile box -->
+            <div class="profileBox">
+                 <div class="image-wrapper">
+                    <img src="assets/img/users/samples/3.jpg" alt="image" class="imaged rounded">
+                </div>
+                <div class="in">
+                    <strong>Upgrade Bar</strong>
+                    <div class="text-muted">
+                        
+                    </div>
+                </div>
+                <a href="#" class="close-sidebar-button" data-bs-dismiss="offcanvas">
+                    <ion-icon name="close"></ion-icon>
+                </a>
+            </div>
+            <!-- * profile box -->
+            
+        </div>
+        <!-- sidebar buttons -->
+        <div class="sidebar-buttons">
+            <!--<a href="#" class="button">
+                <ion-icon name="person-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="archive-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="settings-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="log-out-outline"></ion-icon>
+            </a>-->
+        </div>
+        <!-- * sidebar buttons -->
+    </div>
+    <!-- * App Upgrade sidebar -->
+	
+    <!-- ============== Js Files ==============  -->
+    <!-- Bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- ProgressBar js -->
+    <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js?v0.0.1"></script>
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.1.1.js"></script>
+    <script src="assets/js/app.js?v2.0.4"></script>
+	<script>
+		localStorage.removeItem("active_channel");
+		localStorage.removeItem("active_channel_id");
+		localStorage.removeItem("active_chat_userid");
+		localStorage.removeItem("active_chat_username");
+		localStorage.removeItem("pn-subscriptions");
+		localStorage.removeItem("profileExists");
+		localStorage.removeItem("demouuid");
+		localStorage.setItem("global_channel", "SUGGARO_APP_GLOBAL");
+		var loader = document.getElementById('loader');
+		
+		chat_channel = localStorage.getItem("global_channel");
+			
+		var pubkey = "pub-c-2c0ea513-d356-4b8c-b10b-884046854f75"; // use your own pub-key
+		var subkey = "sub-c-a9e942de-be54-4067-ae49-d0525a9ecef7"; // use your own sub-key
+
+		var username = localStorage.getItem("username");
+		var city = "Paphos";
+		var country = "CY";
+
+		var myState = {
+			'username': username,
+			'location': 'Paphos, Cyprus'
+		};
+
+		if (localStorage.getItem('profileExists')) {
+			//initalize the userState from localstorage..
+			//you could also retrieve a user profile from your backend systems
+			myState.username = localStorage.getItem("username");
+			myState.location = localStorage.profileLocation;
+		}
+		var myUUID = localStorage.getItem(subkey + "uuid");
+		var lastTimeToken = localStorage.getItem(subkey);
+		console.log('local storage had: ' + myUUID + ' for uuid and ' + ' ' + lastTimeToken);
+		if (lastTimeToken === null) {
+			lastTimeToken = 0; //make it zero
+		}
+		if (myUUID === null) {
+			myUUID = PubNub.generateUUID();
+		}
+
+        var pubnub = new PubNub({
+			publishKey:        pubkey,
+			subscribeKey:      subkey,
+			logVerbosity:      false,
+			uuid:              myUUID,
+			ssl:               true,
+			heartbeatInterval: 60
+		});
+		$(document).ready(function() {	
+			if ((localStorage.getItem('contact_id') === null) || (localStorage.getItem('contact_id') === "undefined") || localStorage.getItem('contact_id') === " ") {
+				window.location = "./login.html";
+			}
+			$('#username').text(localStorage.getItem('username'));
+			$('#location').text(localStorage.getItem('location'));
+			var content;
+			var postdata = {
+			  id: localStorage.getItem('client_id'),
+			  contactid: localStorage.getItem('contact_id')
+			};
+			$.ajax({    
+				type: "POST",
+				url: "https://suggaro.eadcloud.eu/API/get_contact.php",             
+				data: postdata,
+				dataType: "json",
+				encode: true,                  
+				success: function(data){
+					localStorage.setItem("email", data['email']);
+					arr = data['customfields']; 
+					$.each(arr, function(key, customefield){
+						if(customefield.label === "Role"){
+							localStorage.setItem("role", customefield.value);
+							var role = customefield.value;
+							var searchfor;
+							if(role==="Daddy" || role==="[Daddy]"){
+								searchfor = "Baby";
+							}
+							else if(role==="Mummy" || role==="[Mummy]"){
+								searchfor = "Baby";
+							}
+							else if(role==="Babe" || role==="[Babe]"){
+								if(localStorage.getItem("gender") == "Daddy" || localStorage.getItem("gender") == "[Daddy]" || localStorage.getItem("gender") == "Mummy" || localStorage.getItem("gender") == "[Mummy]"){
+									searchfor = "Baby";
+								}
+							}
+							
+							else {
+								searchfor = "Baby or Daddy";
+							}
+							localStorage.setItem("searchfor", searchfor);
+						}
+						if(customefield.label === "Interest"){
+							localStorage.setItem("interest", customefield.value);
+						}
+						if(customefield.label === "Gender"){
+							localStorage.setItem("gender", customefield.value);
+						}
+						if(customefield.label === "Sexual Orientation"){
+							localStorage.setItem("orientation", customefield.value);
+						}
+					});
+					if(data['profile_image']!=null){
+						$("#avatar_sidebar").attr("src","https://suggaro.eadcrm.eu/uploads/client_profile_images/"+localStorage.getItem('contact_id')+"/thumb_"+data['profile_image']);
+						localStorage.setItem("profilepic", "thumb_"+data['profile_image']);
+					}
+						
+				}				
+			});		
+			var show_user = false;
+			var count_profiles = 0;
+			$.ajax({    
+				type: "GET",
+				url: "https://suggaro.eadcloud.eu/API/get_users.php",
+				dataType: "html",                  
+				success: function(results){ 
+					content ="";
+					var results = $.parseJSON(results);
+					$.each(results, function(key, user){
+						role_check = false;
+						gender_check = false;
+						user_username = "";
+						nationality = "";
+						if(user['profile_image']!=="" && user['profile_image']!==null){
+							arr = user['customfields']; 
+							$.each(arr, function(key, customefield){
+								
+								if(customefield.label === "Role"){
+									if(customefield.value === localStorage.getItem("searchfor") || customefield.value === "["+localStorage.getItem("searchfor")+"]"){
+											role_check = true;
+									}
+									else if(localStorage.getItem("searchfor")  === "Baby or Daddy"){
+											role_check = true;
+									}
+									else{
+										role_check = false;
+									}
+								}
+								if(customefield.label === "Gender"){
+									if(localStorage.getItem("interest") === customefield.value || localStorage.getItem("interest") === "["+customefield.value+"]" || localStorage.getItem("interest") === "Any" || localStorage.getItem("interest") === "[Any]"){
+										gender_check = true;	
+									}
+									else{
+										gender_check = false;
+									}
+									
+								}
+								if(customefield.label === "Username"){
+									user_username = customefield.value;
+								}
+								if(customefield.label === "Nationality"){
+									nationality = '<img src="assets/img/flags/1x1/'+customefield.value+'.svg" alt="country">';
+								}
+							});
+							if(role_check===true && gender_check===true){
+								
+								url = "https://suggaro.eadcloud.eu/API/checkFavorite.php";
+								var favoriteUser = "";
+								data2 = new Object();
+								data2['user_id'] = localStorage.getItem("contact_id");
+								data2['favorite_id'] = user['id'];
+								$.ajax({    
+									type: "POST",
+									url: url,             
+									data: data2,
+									dataType: "json",
+									success: function(favorite){
+										if(favorite===1){
+											count_profiles++;
+											if(count_profiles==7){
+												content += '<div class="col-12 profile-grid-ad">'
+																+'<div class="adbox adbox-vertical">'
+																	+'<a href="">'
+																		+'<img src="assets/img/sample/ads/600x200.jpg" alt="image">'
+																	+'</a>'
+																+'</div>'
+															+'</div>';						
+												count_profiles=0;
+											}
+											content += '<div class="col-4 profile-grid" data-username="'+user_username+'" data-userid="'+user['id']+'">'
+													+'<div class="card product-card">'
+														+'<div class="card-body">'
+															+'<a href="user-profile.html?userid='+user['id']+'&company='+user['userid']+'" class="img-gradient">'
+																+'<img src="https://suggaro.eadcrm.eu/uploads/client_profile_images/'+user['id']+'/thumb_'+user['profile_image']+'" class="image" alt="product image">'
+															+'</a>'
+															+'<div class="chip chip-media pflag" data-username-pflag="'+user_username+'">'
+																+ nationality																
+															+'</div>'
+															+ '<div class="chip chip-media pfavorite"><a><ion-icon name="heart" role="img" class="md hydrated" aria-label="heart"></ion-icon></a></div>'
+														+'</div>'
+													+'</div>'
+												+'</div>';		
+													
+										}
+									},
+									async: false
+													
+								});
+												
+								
+							}
+						}	
+					});
+					if(count_profiles>3){
+						content += '<div class="col-12 profile-grid-ad">'
+										+'<div class="adbox adbox-vertical">'
+											+'<a href="">'
+												+'<img src="assets/img/sample/ads/600x200.jpg" alt="image">'
+											+'</a>'
+										+'</div>'
+									+'</div>';
+					}
+					$('#users_grid').html(content);
+					sendStateUpdate();
+					//-----------------------------------------------------------------------
+					// Page Loader
+					//----------------------------------------------------------------------
+					setTimeout(() => {
+						loader.setAttribute("style", "pointer-events: none; opacity: 0; transition: 0.2s ease-in-out;");
+						setTimeout(() => {
+							loader.setAttribute("style", "display: none;")
+						}, 1000);
+					}, 450);
+					//-----------------------------------------------------------------------
+				}
+		
+			});
+						
+	});
+	pubnub.addListener({
+		presence: function(event) {
+			var action = event.action;
+			var channel = event.channel;
+			var uuid = event.uuid;
+			var data = event.state;
+			var occupancy = event.occupancy;
+			var from_user;
+			
+			console.log("");
+			console.log("*** presence event ***");
+			console.log("action:    " + action);
+			console.log("channel:   " + channel);
+			console.log("uuid:      " + uuid);
+			console.log("occupancy: " + occupancy);
+			console.log("data:      " + JSON.stringify(data));
+			console.log("*** presence event ***");
+			console.log("");
+			if (action === "join") {
+				UI.updateRoomCount(occupancy);
+			} 
+			else if ((action === "timeout") || (action === "leave")) {
+				UI.handleLeaveEvent(event); 
+			}
+			else if (action === "state-change") {
+				console.log("!!!@@@ state-change event @@@!!!");
+			} 
+		},
+		status: function(event) {
+			if (event.category === "PNConnectedCategory") {
+				pubnub.hereNow(
+					{
+						channels: [localStorage.getItem("global_channel")],
+						includeUUIDs: true,
+						includeState: true
+					}, 
+					function (status, response) {
+						sendStateUpdate();
+						console.log("Status Response");
+						console.log(response);
+						// only one channel for this app, so we don't need to iterate over channels
+						// get the channel by name and then get the uuids and state for each occupant
+						//UI.updateRoomCount(response.channels[chat_channel].occupancy);
+						
+						setTimeout(() => {						
+							response.channels[localStorage.getItem("global_channel")].occupants.forEach(
+								function(item) {
+									console.log(item.state.username);
+									$('div[data-username-pflag = '+item.state.username+']').append('<img src="assets/img/status/active.jpg" class="status" alt="status">');
+								}
+							);
+						}, 1300);
+					}
+				);
+			}
+		},
+	});
+	pubnub.subscribe({
+		channels: [chat_channel],
+		withPresence: true // also subscribe to presence instances.
+	});
+
+	function joinChatRoom() {
+		// if (chat_channel != "webinar-chat") debugger;
+		pubnub.subscribe({
+			channels: [chat_channel],
+			withPresence: true // also subscribe to presence instances.
+		});
+	}
+
+	function leaveChatRoom() {
+		pubnub.unsubscribe({
+			channels: [chat_channel]
+		});
+	}
+
+	function sendStateUpdate() {
+		localStorage.setItem('profileExists', true);
+
+		pubnub.setState(
+		{
+			channels: [chat_channel],
+			uuid: myUUID,
+			state: myState
+		},
+		function(response) {
+			console.log("setState on sendStateUpdate: " + JSON.stringify(response));
+		}
+		);
+	}
+ </script>
+</body>
+
+</html>

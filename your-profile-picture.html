@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>SUGGARO APP</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="manifest" href="__manifest.json">
+</head>
+<body class="bg-white">
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="login-form" >
+            <div class="section">
+                <img src="assets/img/sample/photo/vector4.png" alt="image" class="form-image">
+            </div>
+            <div class="section">
+                <h2 class="text-center mt-2">YOUR PROFILE</h2>
+            </div>
+
+            <div class="input-group-append mt-5">
+                <img src="assets/img/upload.svg" alt="upload-image" id="calendar-svg" class="img-fluid" style="cursor: pointer;">
+                <input type="file" accept="image/*" id="imageInput" style="display: none;">
+            </div>
+
+            <div class="section">
+                <p class="mt-2 ">Add a profile picture and your account gets more visitors!
+                 </p>
+            </div>
+            <div class="section">
+                <p class="mt-2" style="color: #ffc070;">(NSFW PICTURES ARE NOT ALLOWED)
+                 </p>
+            </div>
+        </div>
+
+        <div class="form-group boxed mt-5">
+            <a href="choose-sugarname.html" class="btn btn-primary btn-block btn-lg login-phase-btn">Save changes</a>
+        </div>
+        <div class="form-group boxed ">
+            <a href="choose-sugarname.html" class="btn btn-primary btn-block btn-lg transparent-btn-txt" >SKIP</a>
+        </div>
+
+    </div>
+    <!-- * App Capsule -->
+
+
+
+    <!-- ============== Js Files ==============  -->
+    <!-- Bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- ProgressBar js -->
+    <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+	<script> 
+		var loader = document.getElementById('loader');
+	  $(document).ready(function() {			
+			//-----------------------------------------------------------------------
+			// Page Loader
+			//----------------------------------------------------------------------
+			setTimeout(() => {
+				loader.setAttribute("style", "pointer-events: none; opacity: 0; transition: 0.2s ease-in-out;");
+				setTimeout(() => {
+					loader.setAttribute("style", "display: none;")
+				}, 1000);
+			}, 450);
+			//-----------------------------------------------------------------------		
+			
+		});
+		
+		document.getElementById('calendar-svg').addEventListener('click', function () {
+			document.getElementById('imageInput').click();
+		});
+  
+		document.getElementById('imageInput').addEventListener('change', function (event) {
+			const file = event.target.files[0];
+			if (file) {
+				const reader = new FileReader();
+	  
+				reader.onload = function () {
+					const imgElement = document.createElement('img');
+					imgElement.src = reader.result;
+					imgElement.classList.add('img-fluid');
+	  
+					const inputGroup = document.querySelector('.input-group-append');
+					inputGroup.replaceChild(imgElement, inputGroup.firstChild);
+				};
+	  
+				reader.readAsDataURL(file);
+			}
+      });
+	</script>
+</body>
+
+</html>
